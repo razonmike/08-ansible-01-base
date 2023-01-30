@@ -48,10 +48,8 @@ ok: [localhost] => {
 3. Воспользуйтесь подготовленным (используется docker) или создайте собственное окружение для проведения дальнейших испытаний.
 
 ```bash
-razonmike@razonmike-ThinkPad-T480:~$ docker ps
-CONTAINER ID   IMAGE           COMMAND       CREATED          STATUS          PORTS     NAMES
-264479b2b653   ubuntu:latest   "bash"        7 minutes ago    Up 7 minutes              ubuntu
-8cb14f54da28   centos:latest   "/bin/bash"   11 minutes ago   Up 11 minutes             centos7
+docker run -dit --name centos7 pycontribs/centos:7 sleep 6000000
+docker run -dit --name ubuntu pycontribs/ubuntu:latest sleep 6000000
 ```
 
 4. Проведите запуск playbook на окружении из `prod.yml`. Зафиксируйте полученные значения `some_fact` для каждого из `managed host`.
